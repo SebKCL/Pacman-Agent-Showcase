@@ -1,19 +1,19 @@
 # Pacman MDP Agent (Value Iteration)
 
-> A planning agent that models the Pacman board as a Markov Decision Process and uses value iteration to choose safe, high-value routes.
+> My agent treats the Pacman board as a Markov Decision Process and plans safe, high-value routes with value iteration.
 
-🔒 **The source code is in a private repository** because this was university coursework at King's College London. I'm happy to walk through the code on request.
+🔒 The code sits in a private repository because this was King's College London coursework. Ask me and I'll walk you through it.
 
 ## Overview
-Rather than reacting greedily one step at a time, this agent plans ahead across the whole board. Each game state is converted into a grid-based utility map, value iteration runs until the utilities converge, and Pacman then moves towards the highest-utility neighbouring cell. The agent was built to win consistently on both small and medium layouts.
+The agent plans across the whole board on each turn. It builds a utility map of the grid, runs value iteration until the values settle, then steps to the neighbouring cell with the highest utility. I tuned it to win on small and medium layouts.
 
 ## What I built
-- **Reward map:** positive rewards for food and capsules, negative rewards for danger zones around ghosts
-- **Adaptive behaviour:** when ghosts become edible, Pacman switches to chasing them instead of only avoiding them
-- **Value iteration:** Bellman updates over the traversable grid with a tunable discount factor and convergence threshold
-- **Action selection:** chooses among legal moves by expected utility
+- **Reward map:** food and capsules score positive, and the cells around ghosts score negative
+- **Ghost hunting:** once ghosts turn edible, Pacman chases them
+- **Value iteration:** Bellman updates over every open cell, with a tunable discount factor and stopping threshold
+- **Move choice:** Pacman picks the legal move with the highest expected utility
 
-## Skills demonstrated
+## Skills
 Markov Decision Processes · dynamic programming · planning under uncertainty · reward shaping
 
 ## Tech stack
